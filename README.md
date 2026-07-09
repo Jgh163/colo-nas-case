@@ -4,9 +4,11 @@
 **Material:** 18 ga (1.2mm) steel or aluminum  
 **Layout:** Staggered L — 2× 3.5" HDD + Mini ITX
 
-## 3D Model
+## 🔲 Interactive 3D Model
 
-Click [`colo_nas_3d.stl`](./colo_nas_3d.stl) to view the interactive 3D model directly in your browser (GitHub renders STL files natively).
+**[▶ View Interactive 3D Model](https://github.com/Jgh163/colo-nas-case/blob/main/colo_nas_3d.glb)**
+
+> Drag to rotate · Scroll to zoom
 
 ## Components
 
@@ -42,6 +44,17 @@ The flat pattern SVG is in [`colo_nas_flat.svg`](./colo_nas_flat.svg) — send t
 4. **Top panel** — ventilated
 
 Open [`colo_nas_3d.scad`](./colo_nas_3d.scad) in [OpenSCAD](https://openscad.org) (free) to adjust hole positions, vent patterns, or dimensions. Export DXF for the fab shop.
+
+## Files
+
+| File | Description |
+|---|---|
+| `colo_nas_3d.glb` | 3D model (GLTF/GLB) for GitHub viewer |
+| `colo_nas_3d.stl` | 3D model (STL format) |
+| `colo_nas_3d.scad` | OpenSCAD source |
+| `colo_nas_case_v2.scad` | Combined flat pattern + 3D |
+| `colo_nas_flat.svg` | Flat pattern SVG for laser cutter |
+| `README.md` | This file |
 
 ## Notes
 
