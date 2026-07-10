@@ -1,83 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Colo NAS Case — 3D Model</title>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.2.0/dist/model-viewer.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colo NAS Case v4 — 3D Viewer</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; background: #0b0e14; color: #c8d8e8; font-family: system-ui, sans-serif; }
-    body::before {
-      content: ''; position: fixed; inset: 0; z-index: 0;
-      background-image:
-        linear-gradient(#1e2a3a 1px, transparent 1px),
-        linear-gradient(90deg, #1e2a3a 1px, transparent 1px);
-      background-size: 40px 40px; opacity: 0.25; pointer-events: none;
-    }
-    .wrap { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 2rem; }
-    h1 { font-size: 1.8rem; font-weight: 600; color: #fff; margin-bottom: 0.3rem; }
-    h1 span { color: #00d4ff; }
-    .subtitle { color: #4a6070; margin-bottom: 1.5rem; font-size: 0.9rem; }
-    .viewer-card {
-      background: #111620; border: 1px solid #1e2a3a; border-radius: 6px; overflow: hidden;
-    }
-    .viewer-toolbar {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0.6rem 1rem; border-bottom: 1px solid #1e2a3a;
-      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
-    }
-    .viewer-label { color: #00d4ff; }
-    .viewer-hint { color: #4a6070; }
-    model-viewer { width: 100%; height: 540px; background: #0d111a; }
-    .info { margin-top: 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; }
-    .stat { background: #111620; border: 1px solid #1e2a3a; border-radius: 6px; padding: 1rem; }
-    .stat-label { font-size: 0.6rem; text-transform: uppercase; color: #4a6070; letter-spacing: 0.12em; margin-bottom: 0.3rem; }
-    .stat-value { font-size: 1rem; font-weight: 600; color: #fff; }
-    .footer { margin-top: 1.5rem; font-size: 0.65rem; color: #4a6070; text-align: center; }
-    a { color: #00d4ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    body { margin: 0; background: #1a1a2e; font-family: -apple-system, sans-serif; color: #eee; }
+    #header { padding: 16px 24px; background: #16213e; border-bottom: 2px solid #0f3460; }
+    h1 { margin: 0; font-size: 20px; color: #e94560; }
+    p { margin: 4px 0 0; font-size: 13px; color: #888; }
+    .model-grid { display: flex; gap: 20px; flex-wrap: wrap; padding: 20px; }
+    .model-card { background: #16213e; border-radius: 8px; overflow: hidden; flex: 1; min-width: 400px; }
+    .model-card h2 { margin: 12px 16px 0; font-size: 16px; }
+    .model-card .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin-left: 8px; }
+    .badge-rec { background: #27ae60; color: #fff; }
+    .badge-ref { background: #e67e22; color: #fff; }
+    .model-card .desc { margin: 4px 16px; font-size: 12px; color: #888; }
+    model-viewer { width: 100%; height: 400px; }
+    .info { padding: 12px 24px 24px; font-size: 13px; line-height: 1.6; color: #aaa; }
+    .info a { color: #e94560; }
+    @media (max-width: 640px) { .model-card { min-width: 100%; } }
   </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "@google/model-viewer": "https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/index.min.js"
+      }
+    }
+  </script>
+  <script type="module">
+    import '@google/model-viewer';
+  </script>
 </head>
 <body>
-<div class="wrap">
-  <h1><span>■</span> Colo NAS Case</h1>
-  <p class="subtitle">Folded sheet metal enclosure — 8" × 3" × 8" · 2× 3.5" HDD + Mini ITX</p>
+  <div id="header">
+    <h1>Colo NAS Case v4</h1>
+    <p>7.5" × 7.5" × 2.5" — Folded Sheet Metal — Mini ITX + 2× 3.5" HDD</p>
+  </div>
 
-  <div class="viewer-card">
-    <div class="viewer-toolbar">
-      <span class="viewer-label">⬡ Interactive 3D Model</span>
-      <span class="viewer-hint">drag to rotate · scroll to zoom</span>
+  <div class="model-grid">
+    <div class="model-card">
+      <h2>v4b — Fixed Layout <span class="badge badge-rec">RECOMMENDED</span></h2>
+      <p class="desc">HDD1 on bottom panel (right-side up) + HDD2 suspended from top (upside-down). No overlap.</p>
+      <model-viewer src="./colo_nas_v4b.glb" ar ar-modes="webxr scene-viewer quick-look"
+        camera-controls auto-rotate camera-orbit="45deg 55deg 300mm" shadow-intensity="1">
+      </model-viewer>
     </div>
-    <model-viewer
-      src="colo_nas_3d.glb"
-      alt="Colo NAS Case 3D model"
-      auto-rotate
-      auto-rotate-delay="1000"
-      rotation-per-second="20deg"
-      camera-controls
-      shadow-intensity="0.8"
-      shadow-softness="0.5"
-      exposure="1.1"
-      camera-orbit="45deg 55deg auto"
-      min-camera-orbit="auto auto 5%"
-      max-camera-orbit="auto auto 200%"
-      interaction-prompt="auto"
-    ></model-viewer>
+
+    <div class="model-card">
+      <h2>v4a — Reference <span class="badge badge-ref">VISUALIZATION</span></h2>
+      <p class="desc">Both HDDs top-mounted. Drives overlap in XY — shows why side-by-side needs 8" width.</p>
+      <model-viewer src="./colo_nas_v4.glb" ar ar-modes="webxr scene-viewer quick-look"
+        camera-controls auto-rotate camera-orbit="-45deg 55deg 300mm" shadow-intensity="1">
+      </model-viewer>
+    </div>
   </div>
 
   <div class="info">
-    <div class="stat"><div class="stat-label">Width</div><div class="stat-value">8" / 203mm</div></div>
-    <div class="stat"><div class="stat-label">Height</div><div class="stat-value">3" / 76mm</div></div>
-    <div class="stat"><div class="stat-label">Depth</div><div class="stat-value">8" / 203mm</div></div>
-    <div class="stat"><div class="stat-label">Drives</div><div class="stat-value">2× 3.5" HDD</div></div>
-    <div class="stat"><div class="stat-label">Board</div><div class="stat-value">Mini ITX</div></div>
-    <div class="stat"><div class="stat-label">Cooler</div><div class="stat-value">1U Active</div></div>
+    <strong>SendCutSend Template:</strong> <a href="./colo_nas_v4_template.svg">colo_nas_v4_template.svg</a> — 4 pieces, 2 bends.<br>
+    <strong>OpenSCAD Source:</strong> <a href="https://github.com/Jgh163/colo-nas-case">github.com/Jgh163/colo-nas-case</a><br>
+    <strong>Hardware:</strong> 4× M3×10mm standoffs, 4× M3×5mm screws (MB), 8-16× 6-32 countersunk flathead (HDDs)<br>
+    <strong>Material:</strong> 18 ga (1.2mm) or 20 ga (0.9mm) CRS — cheapest, or galvanized for rust resistance.
   </div>
-
-  <div class="footer">
-    <a href="https://github.com/Jgh163/colo-nas-case">GitHub Repo ↗</a>
-  </div>
-</div>
 </body>
 </html>
