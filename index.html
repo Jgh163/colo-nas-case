@@ -3,64 +3,61 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colo NAS Case v4 — 3D Viewer</title>
+  <title>Colo NAS Case v5 — 3D Viewer</title>
   <style>
     body { margin: 0; background: #1a1a2e; font-family: -apple-system, sans-serif; color: #eee; }
     #header { padding: 16px 24px; background: #16213e; border-bottom: 2px solid #0f3460; }
     h1 { margin: 0; font-size: 20px; color: #e94560; }
-    p { margin: 4px 0 0; font-size: 13px; color: #888; }
-    .model-grid { display: flex; gap: 20px; flex-wrap: wrap; padding: 20px; }
-    .model-card { background: #16213e; border-radius: 8px; overflow: hidden; flex: 1; min-width: 400px; }
+    p { margin: 6px 0 0; font-size: 13px; color: #888; line-height: 1.6; }
+    .model-card { background: #16213e; border-radius: 8px; overflow: hidden; margin: 20px; }
     .model-card h2 { margin: 12px 16px 0; font-size: 16px; }
-    .model-card .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin-left: 8px; }
-    .badge-rec { background: #27ae60; color: #fff; }
-    .badge-ref { background: #e67e22; color: #fff; }
-    .model-card .desc { margin: 4px 16px; font-size: 12px; color: #888; }
-    model-viewer { width: 100%; height: 400px; }
+    .model-card .desc { margin: 4px 16px 8px; font-size: 12px; color: #888; }
+    model-viewer { width: 100%; height: 500px; }
     .info { padding: 12px 24px 24px; font-size: 13px; line-height: 1.6; color: #aaa; }
     .info a { color: #e94560; }
-    @media (max-width: 640px) { .model-card { min-width: 100%; } }
+    .specs { display: flex; gap: 12px; flex-wrap: wrap; margin: 8px 20px 12px; }
+    .spec { background: #0f3460; border-radius: 6px; padding: 8px 14px; font-size: 13px; }
+    .spec b { color: #e94560; }
+    @media (max-width: 640px) { .model-card { margin: 10px; } }
   </style>
   <script type="importmap">
-    {
-      "imports": {
-        "@google/model-viewer": "https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/index.min.js"
-      }
-    }
+    { "imports": { "@google/model-viewer": "https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/index.min.js" } }
   </script>
-  <script type="module">
-    import '@google/model-viewer';
-  </script>
+  <script type="module">import '@google/model-viewer';</script>
 </head>
 <body>
   <div id="header">
-    <h1>Colo NAS Case v4</h1>
-    <p>7.5" × 7.5" × 2.5" — Folded Sheet Metal — Mini ITX + 2× 3.5" HDD</p>
+    <h1>Colo NAS Case v5</h1>
+    <p>7.5" × 7.5" × 2.5" · Folded 18 ga CRS · Mini ITX + 2× 3.5" HDD + 1U cooler</p>
   </div>
 
-  <div class="model-grid">
-    <div class="model-card">
-      <h2>v4b — Fixed Layout <span class="badge badge-rec">RECOMMENDED</span></h2>
-      <p class="desc">HDD1 on bottom panel (right-side up) + HDD2 suspended from top (upside-down). No overlap.</p>
-      <model-viewer src="./colo_nas_v4b.glb" ar ar-modes="webxr scene-viewer quick-look"
-        camera-controls auto-rotate camera-orbit="45deg 55deg 300mm" shadow-intensity="1">
-      </model-viewer>
-    </div>
+  <div class="specs">
+    <div class="spec"><b>Width:</b> 7.5" (190.5mm)</div>
+    <div class="spec"><b>Depth:</b> 7.5" (190.5mm)</div>
+    <div class="spec"><b>Height:</b> 2.5" (63.5mm)</div>
+    <div class="spec"><b>Material:</b> 18 ga CRS (1.2mm)</div>
+    <div class="spec"><b>HDD1:</b> Bottom panel, back-right</div>
+    <div class="spec"><b>HDD2:</b> Top panel, front-left (upside-down)</div>
+  </div>
 
-    <div class="model-card">
-      <h2>v4a — Reference <span class="badge badge-ref">VISUALIZATION</span></h2>
-      <p class="desc">Both HDDs top-mounted. Drives overlap in XY — shows why side-by-side needs 8" width.</p>
-      <model-viewer src="./colo_nas_v4.glb" ar ar-modes="webxr scene-viewer quick-look"
-        camera-controls auto-rotate camera-orbit="-45deg 55deg 300mm" shadow-intensity="1">
-      </model-viewer>
-    </div>
+  <div class="model-card">
+    <h2>Complete Assembly</h2>
+    <p class="desc">Case + top panel + 2× HDD + Mini ITX + standoffs + 1U cooler. Drag to rotate, scroll to zoom.</p>
+    <model-viewer src="./colo_nas_v5.glb" ar ar-modes="webxr scene-viewer quick-look"
+      camera-controls auto-rotate camera-orbit="35deg 55deg 300mm" shadow-intensity="1">
+    </model-viewer>
   </div>
 
   <div class="info">
-    <strong>SendCutSend Template:</strong> <a href="./colo_nas_v4_template.svg">colo_nas_v4_template.svg</a> — 4 pieces, 2 bends.<br>
-    <strong>OpenSCAD Source:</strong> <a href="https://github.com/Jgh163/colo-nas-case">github.com/Jgh163/colo-nas-case</a><br>
-    <strong>Hardware:</strong> 4× M3×10mm standoffs, 4× M3×5mm screws (MB), 8-16× 6-32 countersunk flathead (HDDs)<br>
-    <strong>Material:</strong> 18 ga (1.2mm) or 20 ga (0.9mm) CRS — cheapest, or galvanized for rust resistance.
+    <strong>Layout:</strong> HDD1 on bottom (right-side up, back-right), HDD2 suspended from top (upside-down, front-left). No collision at 7.5" width — drives occupy different Z layers.<br><br>
+    <strong>Download:</strong><br>
+    &nbsp;&nbsp;• <a href="./colo_nas_v5.step">colo_nas_v5.step</a> — STEP file (FreeCAD, Fusion 360, OnShape) ← use this to edit<br>
+    &nbsp;&nbsp;• <a href="./colo_nas_v5.glb">colo_nas_v5.glb</a> — 3D model for web viewer<br>
+    &nbsp;&nbsp;• <a href="./colo_nas_v5.py">colo_nas_v5.py</a> — CadQuery Python source (parametric)<br>
+    <br>
+    <strong>Source:</strong> <a href="https://github.com/Jgh163/colo-nas-case">github.com/Jgh163/colo-nas-case</a><br>
+    <br>
+    <strong>Hardware:</strong> 4× M3×10mm standoffs, 4× M3×5mm screws (MB to standoffs), 4× M3×5mm (standoffs to bottom), 6-32×3/16" flathead countersunk for HDDs (8-12 per drive), 60mm fan.
   </div>
 </body>
 </html>
