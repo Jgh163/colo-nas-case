@@ -3,22 +3,22 @@
 <rect width="800" height="600" fill="#1a1a2e"/>
 <text x="400.0" y="25" fill="#e94560" font-size="18" text-anchor="middle" font-family="monospace" font-weight="bold">PIECE 6: DRIVE SLED (×2) (1 bend each side + 1 bend tab)</text>
 <text x="400.0" y="45" fill="#888" font-size="11" text-anchor="middle" font-family="monospace">Material: 18 ga Mild Steel (0.048" / 1.22mm)  |  Bend radius: 0.048" / 1.22mm  |  Units: mm</text>
-<rect x="71.6" y="80" width="186.48" height="278.98164" fill="#e8e8e8" stroke="#333" stroke-width="1.5"/>
-<text x="143.24" y="72" fill="#ccc" font-size="10" text-anchor="middle" font-family="monospace">PIECE 6: DRIVE SLED (make 2)</text>
-<rect x="50" y="358.98164" width="21.6" height="186.48" fill="#ddd" stroke="#333" stroke-width="1.2"/>
-<text x="55" y="455.22164000000004" fill="#888" font-size="7" font-family="monospace">TAB (bend up)</text>
-<line x1="69.6" y1="173.24" x2="73.6" y2="173.24" stroke="#e94560" stroke-width="1.5" stroke-dasharray="6,4"/>
-<text x="78.6" y="176.24" fill="#e94560" font-size="8" font-family="monospace">up</text>
-<line x1="73.6" y1="173.24" x2="77.6" y2="173.24" stroke="#e94560" stroke-width="1.5" stroke-dasharray="6,4"/>
-<text x="82.6" y="176.24" fill="#e94560" font-size="8" font-family="monospace">up</text>
-<circle cx="84.83" cy="160.01" r="2.0" fill="none" stroke="#e94560" stroke-width="1"/>
-<circle cx="244.85" cy="160.01" r="2.0" fill="none" stroke="#e94560" stroke-width="1"/>
-<circle cx="84.83" cy="270.28664000000003" r="2.0" fill="none" stroke="#e94560" stroke-width="1"/>
-<circle cx="244.85" cy="270.28664000000003" r="2.0" fill="none" stroke="#e94560" stroke-width="1"/>
-<rect x="119.11999999999999" y="349.98164" width="91.44" height="9.0" fill="#333" stroke="#666" stroke-width="0.8"/>
-<circle cx="60.8" cy="173.24" r="2.5" fill="none" stroke="#e94560" stroke-width="1"/>
-<line x1="20" y1="173.24" x2="45" y2="173.24" stroke="#666" stroke-width="0.8"/>
-<line x1="20" y1="170.24" x2="20" y2="176.24" stroke="#666" stroke-width="0.8"/>
-<line x1="45" y1="170.24" x2="45" y2="176.24" stroke="#666" stroke-width="0.8"/>
-<text x="32.5" y="167.24" fill="#888" font-size="8" text-anchor="middle" font-family="monospace">103.6mm</text>
+<rect x="71.6" y="80" width="183.6" height="278.98164" fill="#e8e8e8" stroke="#333" stroke-width="1.5"/>
+<text x="141.8" y="72" fill="#ccc" font-size="10" text-anchor="middle" font-family="monospace">PIECE 6: DRIVE SLED (make 2)</text>
+<rect x="50" y="358.98164" width="21.6" height="183.6" fill="#ddd" stroke="#333" stroke-width="1.2"/>
+<text x="55" y="453.78164000000004" fill="#888" font-size="7" font-family="monospace">TAB (bend up)</text>
+<line x1="69.6" y1="171.8" x2="73.6" y2="171.8" stroke="#e94560" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="78.6" y="174.8" fill="#e94560" font-size="8" font-family="monospace">up</text>
+<line x1="73.6" y1="171.8" x2="77.6" y2="171.8" stroke="#e94560" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="82.6" y="174.8" fill="#e94560" font-size="8" font-family="monospace">up</text>
+<circle cx="83.39" cy="160.01" r="2.0" fill="none" stroke="#e94560" stroke-width="1"/>
+<circle cx="243.40999999999997" cy="160.01" r="2.0" fill="none" stroke="#e94560" stroke-width="1"/>
+<circle cx="83.39" cy="270.28664000000003" r="2.0" fill="none" stroke="#e94560" stroke-width="1"/>
+<circle cx="243.40999999999997" cy="270.28664000000003" r="2.0" fill="none" stroke="#e94560" stroke-width="1"/>
+<rect x="117.68" y="349.98164" width="91.44" height="9.0" fill="#333" stroke="#666" stroke-width="0.8"/>
+<circle cx="60.8" cy="171.8" r="2.5" fill="none" stroke="#e94560" stroke-width="1"/>
+<line x1="20" y1="171.8" x2="45" y2="171.8" stroke="#666" stroke-width="0.8"/>
+<line x1="20" y1="168.8" x2="20" y2="174.8" stroke="#666" stroke-width="0.8"/>
+<line x1="45" y1="168.8" x2="45" y2="174.8" stroke="#666" stroke-width="0.8"/>
+<text x="32.5" y="165.8" fill="#888" font-size="8" text-anchor="middle" font-family="monospace">102.0mm</text>
 </svg>

@@ -126,25 +126,34 @@ for vx in range(int(ZB_X+10), int(CX-15), 20):
     for vy in range(int(ZB_Y+10), int(ZB_Y+ZD-10), 20):
         tp = tp.cut(atc(3, 3, MM+2, vx, vy, CZ-MM-1))
 # Vent holes HDD side
-for vx in range(int(HDD_X+10), int(HDD_X+HW-10), 25):
-    for vy in range(int(HDD_Y+HH+10), int(HDD_Y+HD-10), 25):
-        tp = tp.cut(atc(3, 3, MM+2, vx, vy, CZ-MM-1))
 assy = assy.union(tp)
 
-# --- Drive sleds ---
+# U-channel sled: bottom + walls bent up from edges + front tab
+SLED_W = 102            # sled width (fits in 104.4mm gap)
+SLED_D = HD + 8         # sled depth (HD + front tab clearance)
+SLED_FL = 8             # side wall height (forms guide rail)
+SLED_FT = 12            # front tab length
+
 def make_sled():
-    s = atc(SLED_W, SLED_D, MM, 0, 0, 0)
+    s = atc(SLED_W, SLED_D, MM, 0, 0, 0)  # bottom tray
+    # Left wall (bent up 90°)
     s = s.union(atc(MM, SLED_D, SLED_FL, 0, 0, MM))
+    # Right wall (bent up 90°)
     s = s.union(atc(MM, SLED_D, SLED_FL, SLED_W-MM, 0, MM))
+    # Front tab (extends forward from bottom, for gripping)
     s = s.union(atc(SLED_W, SLED_FT, MM, 0, -SLED_FT, 0))
+    # 6-32 clearance holes at standard HDD bottom thread positions
     for yo in [HF, HD-HR]:
         for sx in [-1, 1]:
             sx_off = HW/2 + sx*(HW/2-HS)
-            hx = (SLED_W-HW)/2 + sx_off
+            # Center HDD on sled width
+            hx = (SLED_W - HW) / 2 + sx_off
             s = s.cut(atc(4, 4, MM+2, hx-2, yo-2, -1))
+    # Vent holes between mounting holes
     for vy in range(int(HF)+15, int(HD-HR)-15, 15):
-        s = s.cut(atc(SLED_W-20, 3, MM+2, 10, float(vy), -1))
-    s = s.cut(atc(HW/2, 5, MM+2, (SLED_W-HW/2)/2, SLED_D-5, -1))
+        s = s.cut(atc(SLED_W-16, 3, MM+2, 8, float(vy), -1))
+    # Rear cutout for SATA connector clearance
+    s = s.cut(atc(HW/2+10, 5, MM+2, (SLED_W-HW/2-10)/2, SLED_D-5, -1))
     return s
 
 s1 = make_sled().translate((HDD_X, SLED_FT, G1_Z))
