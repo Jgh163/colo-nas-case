@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colo NAS Case v8 — ZimaBlade + Custom Sleds</title>
+  <title>Colo NAS Case v9</title>
   <style>
     * { box-sizing: border-box; margin: 0; }
-    body { background: #1a1a2e; font-family: -apple-system, sans-serif; color: #eee; padding: 20px; }
+    body { background: #1a1a2e; font-family: -apple-system, sans-serif; color: #eee; padding: 0; }
     h1 { color: #e94560; font-size: 22px; margin-bottom: 4px; }
     .sub { color: #888; font-size: 13px; margin-bottom: 16px; }
-    .spec-grid { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .spec-grid { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
     .spec { background: #16213e; border-radius: 6px; padding: 8px 14px; font-size: 13px; }
     .spec b { color: #e94560; }
     .card { background: #16213e; border-radius: 10px; padding: 20px; margin-bottom: 16px; }
@@ -20,83 +20,82 @@
            border-radius: 6px; margin: 4px; font-size: 14px; text-align: center; }
     .btn:hover { background: #e94560; text-decoration: none; }
     .dl-grid { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
-    .stl-link { display: block; background: #0f3460; border-radius: 6px; padding: 14px; 
-                margin: 8px 0; text-align: center; font-size: 14px; border: 1px solid #e94560; }
-    pre { font-size: 12px; color: #aaa; line-height: 1.5; overflow-x: auto; }
-    @media (max-width: 640px) { body { padding: 12px; } }
+    #header { padding: 16px 24px; background: #16213e; border-bottom: 2px solid #0f3460; }
+    .content { padding: 16px 24px; }
+    model-viewer { width: 100%; height: 60vh; min-height: 300px; background: #0f3460; border-radius: 8px; }
+    @media (max-width: 640px) { .content { padding: 12px; } model-viewer { height: 50vh; } }
   </style>
+  <!-- Load model-viewer from CDN as a regular script (works on mobile browsers) -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/index.min.js"></script>
 </head>
 <body>
-  <h1>Colo NAS Case v8</h1>
-  <p class="sub">7.500" × 7.500" × 2.500" · ZimaBlade 7700 + 2× 3.5" HDD (custom sleds) + PCIe IPMI via riser</p>
-
-  <div class="spec-grid">
-    <div class="spec"><b>Width:</b> 7.500"</div>
-    <div class="spec"><b>Depth:</b> 7.500"</div>
-    <div class="spec"><b>Height:</b> 2.500"</div>
-    <div class="spec">U-channel + tabs</div>
-    <div class="spec">Custom drive sleds ×2</div>
-    <div class="spec">2× Eth + USB-C bulkhead</div>
-    <div class="spec">60mm intake + exhaust</div>
+  <div id="header">
+    <h1>Colo NAS Case v9</h1>
+    <p class="sub" style="margin:4px 0 0;font-size:13px;color:#888;">
+      7.500" × 7.500" × 2.500" · ZimaBlade 7700 · 2× 3.5" HDD (custom sleds) · JetKVM
+    </p>
   </div>
 
-  <div class="card">
-    <h2>📐 View 3D Model</h2>
-    <a class="stl-link" href="https://github.com/Jgh163/colo-nas-case/blob/gh-pages/colo_nas_v8.stl" target="_blank">
-      🖱️ Click to view & rotate 3D model on GitHub →
-    </a>
-  </div>
-
-  <div class="card">
-    <h2>⬇️ Downloads</h2>
-    <div class="dl-grid">
-      <a class="btn" href="./colo_nas_v8.step">📦 STEP (edit)</a>
-      <a class="btn" href="./colo_nas_v8.stl">📐 STL (3D)</a>
-      <a class="btn" href="./colo_nas_v8.glb">🔮 GLB (web)</a>
-      <a class="btn" href="./build_v8.py">🐍 CadQuery source</a>
+  <div class="content">
+    <div class="spec-grid">
+      <div class="spec"><b>Width:</b> 7.500"</div>
+      <div class="spec"><b>Depth:</b> 7.500"</div>
+      <div class="spec"><b>Height:</b> 2.500"</div>
+      <div class="spec">18 ga CRS</div>
+      <div class="spec">Custom sleds ×2</div>
+      <div class="spec">JetKVM IPMI</div>
+      <div class="spec">PCIe slot free</div>
     </div>
-  </div>
 
-  <div class="card">
-    <h2>📋 Layout</h2>
-    <pre>
-┌──────────────────────────────────────┐
-│  HDD1 (bottom sled) │  ZimaBlade     │
-│  HDD2 (top sled)    │  + PCIe IPMI   │
-│  stacked vertically  │  (flat via riser)│
-│  2× custom sleds    │  2× Eth + USB-C│
-│  slide from front   │  60mm fan →     │
-│             60mm fan ←               │
-└──────────────────────────────────────┘</pre>
-  </div>
+    <!-- 3D Viewer -->
+    <model-viewer src="./colo_nas_v9.glb" ar ar-modes="webxr scene-viewer quick-look"
+      camera-controls auto-rotate rotation-per-second="30deg" shadow-intensity="1"
+      exposure="0.8" camera-orbit="45deg 55deg 300mm">
+      <div slot="progress-bar" style="background:#e94560;"></div>
+    </model-viewer>
 
-  <div class="card">
-    <h2>🔧 SendCutSend Pieces</h2>
-    <pre>
-1. U-channel body (bottom + 2 side walls + tabs) — 2 bends
-2. Divider wall (separates HDD bay from ZimaBlade)
-3. Front panel (60mm fan intake + sled access opening)
-4. Rear panel (2× Ethernet, USB-C, DC bulkheads + 60mm exhaust)
-5. Top panel (ventilated)
-6. Drive sled × 2 (custom tray with front handle + guide flanges)</pre>
-  </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;">
+      <a class="btn" href="./colo_nas_v9.step">📦 STEP (edit)</a>
+      <a class="btn" href="./colo_nas_v9.stl">📐 STL (3D)</a>
+      <a class="btn" href="./colo_nas_v9.glb">🔮 GLB (web)</a>
+      <a class="btn" href="./build_v9.py">🐍 CadQuery</a>
+    </div>
 
-  <div class="card">
-    <h2>📏 Z-Height Stack</h2>
-    <pre>
-TOP PANEL         0.048"
-HDD2 (on sled2)   1.028"   ← left
-PCIe IPMI (riser) ~0.6"    ← right
-GUIDE RAIL shelf  0.118"
-HDD1 (on sled1)   1.028"   ← left
-ZimaBlade         0.906"   ← right (5mm standoffs)
-BOTTOM PANEL      0.048"
-─────────────────────────
-Total             2.500"</pre>
-  </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;">
+      <a class="btn" href="./piece_1_uchannel.svg">📄 U-channel</a>
+      <a class="btn" href="./piece_2_divider.svg">📄 Divider</a>
+      <a class="btn" href="./piece_3_front.svg">📄 Front</a>
+      <a class="btn" href="./piece_4_rear.svg">📄 Rear</a>
+      <a class="btn" href="./piece_5_top.svg">📄 Top</a>
+      <a class="btn" href="./piece_6_sled.svg">📄 Sled (×2)</a>
+    </div>
 
-  <p style="text-align:center;color:#555;font-size:12px;margin-top:20px;">
-    <a href="https://github.com/Jgh163/colo-nas-case">GitHub Repo</a>
-  </p>
+    <div class="card">
+      <h2>SendCutSend — 6 pieces</h2>
+      <p style="font-size:13px;color:#aaa;line-height:1.8;">
+        Upload the SVGs above to <a href="https://app.sendcutsend.com">app.sendcutsend.com</a>.<br>
+        <b>Material:</b> 18 ga Mild Steel (0.048")<br>
+        <b>Bends:</b> Piece 1 has 2× 90° bends (walls fold up). Mark red dashed lines.<br>
+        <b>Pieces 2-5:</b> Flat, no bends. Piece 6 (sleds): make 2, 1 bend each side flange.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Assembly order (bottom → top)</h2>
+      <pre style="font-size:12px;color:#aaa;line-height:1.7;overflow-x:auto;">
+ 1  U-channel body — fold walls up 90°, screw into tabs
+ 2  Divider wall — screw to bottom, separates HDDs (left) from board (right)
+ 3  ZimaBlade 7700 — on 5mm standoffs, right bay, I/O at rear
+ 4  JetKVM — on 5mm standoffs, right bay in front of ZimaBlade
+ 5  HDDs on sleds — slide into left bay guide rails from front
+ 6  Front panel — screw to front tabs, 60mm fan in ZimaBlade side
+ 7  Rear panel — screw to rear tabs, 60mm fan + bulkheads
+ 8  Top panel — screw to wall tabs, ventilated</pre>
+    </div>
+
+    <p style="text-align:center;color:#555;font-size:12px;margin-top:20px;">
+      <a href="https://github.com/Jgh163/colo-nas-case">GitHub Repo</a>
+    </p>
+  </div>
 </body>
 </html>
