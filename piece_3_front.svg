@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800mm" height="600mm">
+<rect width="800" height="600" fill="#1a1a2e"/>
+<text x="400.0" y="25" fill="#e94560" font-size="18" text-anchor="middle" font-family="monospace" font-weight="bold">PIECE 3: FRONT PANEL (flat, no bends)</text>
+<text x="400.0" y="45" fill="#888" font-size="11" text-anchor="middle" font-family="monospace">Material: 18 ga Mild Steel (0.048" / 1.22mm)  |  Bend radius: 0.048" / 1.22mm  |  Units: mm</text>
+<rect x="50" y="80" width="338.50800000000004" height="114.3" fill="#e8e8e8" stroke="#333" stroke-width="1.5"/>
+<text x="219.25400000000002" y="72" fill="#ccc" font-size="10" text-anchor="middle" font-family="monospace">PIECE 3: FRONT PANEL (flat, no bends)</text>
+<rect x="240.07999999999998" y="83.15" width="108.0" height="108.0" fill="#440" stroke="#e94560" stroke-width="1.2"/>
+<text x="294.08" y="140.15" fill="#e94560" font-size="7" text-anchor="middle" font-family="monospace">60mm FAN</text>
+<circle cx="250.07999999999998" cy="93.15" r="1.75" fill="none" stroke="#e94560" stroke-width="1"/>
+<circle cx="250.07999999999998" cy="183.15" r="1.75" fill="none" stroke="#e94560" stroke-width="1"/>
+<circle cx="340.08" cy="183.15" r="1.75" fill="none" stroke="#e94560" stroke-width="1"/>
+<circle cx="340.08" cy="183.15" r="1.75" fill="none" stroke="#e94560" stroke-width="1"/>
+<rect x="50.0" y="83.996" width="190.07999999999998" height="112.00032" fill="#333" stroke="#666" stroke-width="1"/>
+<text x="145.04" y="142.99616" fill="#888" font-size="7" text-anchor="middle" font-family="monospace">SLED ACCESS</text>
+<circle cx="57.2" cy="127.088" r="1.75" fill="none" stroke="#e94560" stroke-width="1"/>
+<circle cx="57.2" cy="143.288" r="1.75" fill="none" stroke="#e94560" stroke-width="1"/>
+<circle cx="381.308" cy="127.088" r="1.75" fill="none" stroke="#e94560" stroke-width="1"/>
+<circle cx="381.308" cy="143.288" r="1.75" fill="none" stroke="#e94560" stroke-width="1"/>
+<line x1="50" y1="65" x2="388.50800000000004" y2="65" stroke="#666" stroke-width="0.8"/>
+<line x1="50" y1="62" x2="50" y2="68" stroke="#666" stroke-width="0.8"/>
+<line x1="388.50800000000004" y1="62" x2="388.50800000000004" y2="68" stroke="#666" stroke-width="0.8"/>
+<text x="219.25400000000002" y="59" fill="#888" font-size="8" text-anchor="middle" font-family="monospace">188.1mm</text>
+<line x1="20" y1="137.15" x2="45" y2="137.15" stroke="#666" stroke-width="0.8"/>
+<line x1="20" y1="134.15" x2="20" y2="140.15" stroke="#666" stroke-width="0.8"/>
+<line x1="45" y1="134.15" x2="45" y2="140.15" stroke="#666" stroke-width="0.8"/>
+<text x="32.5" y="131.15" fill="#888" font-size="8" text-anchor="middle" font-family="monospace">63.5mm</text>
+</svg>

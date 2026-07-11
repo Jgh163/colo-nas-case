@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800mm" height="600mm">
+<rect width="800" height="600" fill="#1a1a2e"/>
+<text x="400.0" y="25" fill="#e94560" font-size="18" text-anchor="middle" font-family="monospace" font-weight="bold">PIECE 1: U-CHANNEL BODY (1 piece, 2 bends)</text>
+<text x="400.0" y="45" fill="#888" font-size="11" text-anchor="middle" font-family="monospace">Material: 18 ga Mild Steel (0.048" / 1.22mm)  |  Bend radius: 0.048" / 1.22mm  |  Units: mm</text>
+<rect x="162.10399999999998" y="80" width="342.90000000000003" height="342.90000000000003" fill="#e8e8e8" stroke="#333" stroke-width="1.5"/>
+<text x="333.554" y="72" fill="#ccc" font-size="10" text-anchor="middle" font-family="monospace">BOTTOM PANEL</text>
+<rect x="50" y="80" width="112.104" height="342.90000000000003" fill="#ddd" stroke="#333" stroke-width="1.5"/>
+<text x="106.05199999999999" y="72" fill="#ccc" font-size="10" text-anchor="middle" font-family="monospace">LEFT WALL (fold up 90°)</text>
+<line x1="160.10399999999998" y1="251.45000000000002" x2="164.10399999999998" y2="251.45000000000002" stroke="#e94560" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="169.10399999999998" y="254.45000000000002" fill="#e94560" font-size="8" font-family="monospace">up</text>
+<rect x="505.004" y="80" width="112.104" height="342.90000000000003" fill="#ddd" stroke="#333" stroke-width="1.5"/>
+<text x="561.056" y="72" fill="#ccc" font-size="10" text-anchor="middle" font-family="monospace">RIGHT WALL (fold up 90°)</text>
+<line x1="503.004" y1="251.45000000000002" x2="507.004" y2="251.45000000000002" stroke="#e94560" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="512.004" y="254.45000000000002" fill="#e94560" font-size="8" font-family="monospace">up</text>
+<rect x="0" y="80" width="14.4" height="27.0" fill="#aaa" stroke="#333" stroke-width="1.5"/>
+<text x="7.2" y="72" fill="#ccc" font-size="10" text-anchor="middle" font-family="monospace">FRONT TAB</text>
+<circle cx="7.2" cy="95.9" r="1.75" fill="none" stroke="#e94560" stroke-width="1"/>
+<circle cx="7.2" cy="112.1" r="1.75" fill="none" stroke="#e94560" stroke-width="1"/>
+<rect x="0" y="395.90000000000003" width="14.4" height="27.0" fill="#aaa" stroke="#333" stroke-width="1.5"/>
+<text x="7.2" y="387.90000000000003" fill="#ccc" font-size="10" text-anchor="middle" font-family="monospace">REAR TAB</text>
+<circle cx="7.2" cy="411.8" r="1.75" fill="none" stroke="#e94560" stroke-width="1"/>
+<circle cx="7.2" cy="428.00000000000006" r="1.75" fill="none" stroke="#e94560" stroke-width="1"/>
+<rect x="602.7080000000001" y="80" width="14.4" height="27.0" fill="#aaa" stroke="#333" stroke-width="1.5"/>
+<text x="609.9080000000001" y="72" fill="#ccc" font-size="10" text-anchor="middle" font-family="monospace">FRONT TAB</text>
+<circle cx="609.9080000000001" cy="95.9" r="1.75" fill="none" stroke="#e94560" stroke-width="1"/>
+<circle cx="609.9080000000001" cy="112.1" r="1.75" fill="none" stroke="#e94560" stroke-width="1"/>
+<rect x="602.7080000000001" y="395.90000000000003" width="14.4" height="27.0" fill="#aaa" stroke="#333" stroke-width="1.5"/>
+<text x="609.9080000000001" y="387.90000000000003" fill="#ccc" font-size="10" text-anchor="middle" font-family="monospace">REAR TAB</text>
+<circle cx="609.9080000000001" cy="411.8" r="1.75" fill="none" stroke="#e94560" stroke-width="1"/>
+<circle cx="609.9080000000001" cy="428.00000000000006" r="1.75" fill="none" stroke="#e94560" stroke-width="1"/>
+<line x1="50" y1="65" x2="617.1080000000001" y2="65" stroke="#666" stroke-width="0.8"/>
+<line x1="50" y1="62" x2="50" y2="68" stroke="#666" stroke-width="0.8"/>
+<line x1="617.1080000000001" y1="62" x2="617.1080000000001" y2="68" stroke="#666" stroke-width="0.8"/>
+<text x="333.55400000000003" y="59" fill="#888" font-size="8" text-anchor="middle" font-family="monospace">190.5mm / 7.500"</text>
+<line x1="510.004" y1="251.45000000000002" x2="622.1080000000001" y2="251.45000000000002" stroke="#666" stroke-width="0.8"/>
+<line x1="510.004" y1="248.45000000000002" x2="510.004" y2="254.45000000000002" stroke="#666" stroke-width="0.8"/>
+<line x1="622.1080000000001" y1="248.45000000000002" x2="622.1080000000001" y2="254.45000000000002" stroke="#666" stroke-width="0.8"/>
+<text x="566.056" y="245.45000000000002" fill="#888" font-size="8" text-anchor="middle" font-family="monospace">62.3</text>
+<line x1="91.05199999999999" y1="432.90000000000003" x2="433.952" y2="432.90000000000003" stroke="#666" stroke-width="0.8"/>
+<line x1="91.05199999999999" y1="429.90000000000003" x2="91.05199999999999" y2="435.90000000000003" stroke="#666" stroke-width="0.8"/>
+<line x1="433.952" y1="429.90000000000003" x2="433.952" y2="435.90000000000003" stroke="#666" stroke-width="0.8"/>
+<text x="262.502" y="426.90000000000003" fill="#888" font-size="8" text-anchor="middle" font-family="monospace">190.5</text>
+</svg>

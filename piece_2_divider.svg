@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800mm" height="600mm">
+<rect width="800" height="600" fill="#1a1a2e"/>
+<text x="400.0" y="25" fill="#e94560" font-size="18" text-anchor="middle" font-family="monospace" font-weight="bold">PIECE 2: DIVIDER WALL (flat, no bends)</text>
+<text x="400.0" y="45" fill="#888" font-size="11" text-anchor="middle" font-family="monospace">Material: 18 ga Mild Steel (0.048" / 1.22mm)  |  Bend radius: 0.048" / 1.22mm  |  Units: mm</text>
+<rect x="50" y="80" width="342.90000000000003" height="112.104" fill="#e8e8e8" stroke="#333" stroke-width="1.5"/>
+<text x="221.45000000000002" y="72" fill="#ccc" font-size="10" text-anchor="middle" font-family="monospace">PIECE 2: DIVIDER WALL</text>
+<rect x="70" y="87.596" width="302.90000000000003" height="5.4" fill="none" stroke="#e94560" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="60" y="90.596" fill="#e94560" font-size="7" font-family="monospace">Bottom sled guide</text>
+<rect x="70" y="139.99616" width="302.90000000000003" height="5.4" fill="none" stroke="#e94560" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="60" y="142.99616" fill="#e94560" font-size="7" font-family="monospace">Top sled guide</text>
+<line x1="50" y1="197.10399999999998" x2="392.90000000000003" y2="197.10399999999998" stroke="#666" stroke-width="0.8"/>
+<line x1="50" y1="194.10399999999998" x2="50" y2="200.10399999999998" stroke="#666" stroke-width="0.8"/>
+<line x1="392.90000000000003" y1="194.10399999999998" x2="392.90000000000003" y2="200.10399999999998" stroke="#666" stroke-width="0.8"/>
+<text x="221.45000000000002" y="191.10399999999998" fill="#888" font-size="8" text-anchor="middle" font-family="monospace">190.5mm</text>
+<line x1="15" y1="136.052" x2="45" y2="136.052" stroke="#666" stroke-width="0.8"/>
+<line x1="15" y1="133.052" x2="15" y2="139.052" stroke="#666" stroke-width="0.8"/>
+<line x1="45" y1="133.052" x2="45" y2="139.052" stroke="#666" stroke-width="0.8"/>
+<text x="30.0" y="130.052" fill="#888" font-size="8" text-anchor="middle" font-family="monospace">62.3mm</text>
+</svg>
