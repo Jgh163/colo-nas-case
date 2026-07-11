@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colo NAS Case v5</title>
+  <title>Colo NAS Case v6 — ZimaBlade</title>
   <style>
     * { box-sizing: border-box; margin: 0; }
     body { background: #1a1a2e; font-family: -apple-system, sans-serif; color: #eee; padding: 20px; }
@@ -13,108 +13,104 @@
     .spec { background: #16213e; border-radius: 6px; padding: 8px 14px; font-size: 13px; }
     .spec b { color: #e94560; }
     .card { background: #16213e; border-radius: 10px; padding: 20px; margin-bottom: 16px; }
-    .card h2 { font-size: 16px; margin-bottom: 8px; color: #eee; }
+    .card h2 { font-size: 16px; margin-bottom: 8px; }
     a { color: #e94560; text-decoration: none; }
     a:hover { text-decoration: underline; }
     .btn { display: inline-block; background: #0f3460; color: #eee; padding: 10px 20px; 
            border-radius: 6px; margin: 4px; font-size: 14px; text-align: center; }
     .btn:hover { background: #e94560; text-decoration: none; }
     .dl-grid { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
-    .note { background: #0f3460; border-left: 3px solid #e94560; padding: 10px 14px; 
-            border-radius: 4px; font-size: 13px; line-height: 1.6; margin: 10px 0; }
     .stl-link { display: block; background: #0f3460; border-radius: 6px; padding: 14px; 
                 margin: 8px 0; text-align: center; font-size: 14px; border: 1px solid #e94560; }
+    pre { font-size: 12px; color: #aaa; line-height: 1.5; overflow-x: auto; }
     @media (max-width: 640px) { body { padding: 12px; } }
   </style>
 </head>
 <body>
-  <h1>Colo NAS Case v5</h1>
-  <p class="sub">7.5" × 7.5" × 2.5" · 18 ga CRS · Mini ITX + 2× 3.5" HDD + 1U cooler</p>
+  <h1>Colo NAS Case v6 — ZimaBlade</h1>
+  <p class="sub">7.5" × 7.5" × 2.5" · 18 ga CRS · ZimaBlade 7700 + 2× 3.5" HDD + PCIe IPMI via riser</p>
 
   <div class="spec-grid">
     <div class="spec"><b>Width:</b> 7.5" (190.5mm)</div>
     <div class="spec"><b>Depth:</b> 7.5" (190.5mm)</div>
     <div class="spec"><b>Height:</b> 2.5" (63.5mm)</div>
-    <div class="spec"><b>18 ga</b> CRS (1.2mm)</div>
-    <div class="spec">HDD1 on <b>bottom</b> panel</div>
-    <div class="spec">HDD2 from <b>top</b> panel (↓)</div>
+    <div class="spec"><b>SBC:</b> ZimaBlade 7700</div>
+    <div class="spec"><b>Storage:</b> 2× 3.5" HDD</div>
+    <div class="spec"><b>IPMI:</b> PCIe via riser</div>
   </div>
 
   <div class="card">
     <h2>📐 View 3D Model</h2>
     <p style="font-size:13px;color:#888;margin-bottom:12px;">
-      GitHub renders STL files directly in your browser — no plugins needed.
+      Click to view & rotate the STL on GitHub's built-in 3D viewer (works on mobile).
     </p>
-    <a class="stl-link" href="https://github.com/Jgh163/colo-nas-case/blob/gh-pages/colo_nas_v5.stl" target="_blank">
-      🖱️ Click to view & rotate 3D model on GitHub →
+    <a class="stl-link" href="https://github.com/Jgh163/colo-nas-case/blob/gh-pages/colo_nas_v6.stl" target="_blank">
+      🖱️ Click to view & rotate 3D model →
     </a>
-    <p style="font-size:12px;color:#666;margin-top:6px;">
-      Opens GitHub's built-in 3D viewer. Works on mobile Safari/Chrome.
-    </p>
   </div>
 
   <div class="card">
     <h2>⬇️ Downloads</h2>
     <div class="dl-grid">
-      <a class="btn" href="./colo_nas_v5.step">📦 STEP (edit)</a>
-      <a class="btn" href="./colo_nas_v5.stl">📐 STL (3D print)</a>
-      <a class="btn" href="./colo_nas_v5.glb">🔮 GLB (web)</a>
-      <a class="btn" href="./colo_nas_v5.py">🐍 CadQuery source</a>
+      <a class="btn" href="./colo_nas_v6.step">📦 STEP (edit)</a>
+      <a class="btn" href="./colo_nas_v6.stl">📐 STL (3D)</a>
+      <a class="btn" href="./colo_nas_v6.glb">🔮 GLB (web)</a>
+      <a class="btn" href="./build_v6.py">🐍 CadQuery source</a>
     </div>
   </div>
 
   <div class="card">
     <h2>📋 Layout</h2>
-    <pre style="font-size:12px;color:#aaa;line-height:1.5;overflow-x:auto;">
-┌────────────────────────────────┐
-│  HDD2 (from TOP, upside-down) │  ← front
-│       front-left area          │
-│                                │
-│     Motherboard on standoffs   │
-│     CPU/1U cooler in gap       │
-│                                │
-│  ┌──────────────────────┐      │
-│  │ HDD1 (BOTTOM panel)  │      │
-│  │ back-right area       │      │
-│  └──────────────────────┘      │
-│         I/O ║ [fan] ║          │  ← rear
-└────────────────────────────────┘</pre>
+    <pre>
+┌──────────────────────────────────────┐
+│                    │                  │
+│  HDD1 (bottom)     │  ZimaBlade      │
+│  HDD2 (top, susp.) │  + PCIe IPMI    │
+│  stacked vertically│  (flat via riser)│
+│                    │                  │
+│  4" × 5.79" each   │  ~3.15" × 4.2"  │
+│                    │                  │
+│  SATA→rear         │  I/O→rear       │
+└──────────────────────────────────────┘</pre>
   </div>
 
   <div class="card">
     <h2>📏 Height Stack</h2>
-    <pre style="font-size:12px;color:#aaa;line-height:1.5;">
-Top panel  ──  0.048"
-HDD2 (upside-down)  ──  1.028"
-Air gap / cables  ──  ~0.4"
-CPU cooler (1U)  ──  0.5"
-Motherboard PCB  ──  0.06"
-Standoffs M3×10mm  ──  0.4"
-HDD1 (right-side up)  ──  1.028"
-Bottom panel  ──  0.048"
-─────────────────────
-Total:  ~2.5"</pre>
+    <pre>
+TOP PANEL          0.048"
+HDD2 (upside-down) 1.028"  ← left half
+IPMI card on riser ~0.8"   ← right half
+HDD1 (right-up)    1.028"  ← left half
+ZimaBlade board   ~0.9"    ← right half
+BOTTOM PANEL      0.048"
+────────────────────────
+Total             2.5"</pre>
   </div>
 
   <div class="card">
-    <h2>🔧 Hardware</h2>
-    <ul style="font-size:13px;color:#aaa;line-height:2;padding-left:20px;">
-      <li>4× M3×10mm hex standoffs (motherboard)</li>
-      <li>8× M3×5mm screws (MB→standoffs, standoffs→bottom)</li>
-      <li>8-16× 6-32×3/16" flathead countersunk (HDDs)</li>
-      <li>60mm fan (Noctua NF-A6x15 or similar)</li>
-      <li>Rubber isolation pads under HDDs</li>
-    </ul>
+    <h2>🔧 Parts List</h2>
+    <pre>
+SBC:    ZimaBlade 7700 (~$120)
+IPMI:   BliKVM v2 PCIe or PiKVM PCIe (~$100)
+HDDs:   2× 3.5" SATA (your choice)
+Riser:  PCIe x4 flexible riser cable (~$15)
+PSU:    12V 5A DC (ZimaBlade's own, powers HDDs too)
+HW:     6-32 countersunk × 8, M3 standoffs × 4, M3 screws × 8</pre>
   </div>
 
   <div class="card">
     <h2>📖 How to Edit</h2>
-    <div class="note">
-      <b>FreeCAD</b> (free): Download the <a href="./colo_nas_v5.step">STEP file</a>, open in FreeCAD. 
-      You can edit dimensions, add holes, modify the case shape. Then export a flat pattern DXF for SendCutSend.<br><br>
-      <b>CadQuery</b> (Python): Edit <a href="./colo_nas_v5.py">build_v5.py</a>, change constants at the top,
-      run: <code>python build_v5.py</code> to regenerate STEP/STL.
-    </div>
+    <pre>
+Open <a href="./colo_nas_v6.step">STEP file</a> in FreeCAD (free) or Fusion 360 to:
+  - Adjust hole positions
+  - Add/remove vent slots
+  - Generate flat pattern for SendCutSend
+  - Change dimensions (width/depth/height)
+
+Or edit <a href="./build_v6.py">build_v6.py</a> (CadQuery Python):
+  - Change constants at the top
+  - Run: python build_v6.py
+  - Regenerates STEP/STL/GLB</pre>
   </div>
 
   <p style="text-align:center;color:#555;font-size:12px;margin-top:20px;">
