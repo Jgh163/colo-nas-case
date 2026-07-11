@@ -21,6 +21,7 @@
     .subtitle { color: #4a6070; margin-bottom: 1.5rem; font-size: 0.9rem; }
     .viewer-card {
       background: #111620; border: 1px solid #1e2a3a; border-radius: 6px; overflow: hidden;
+      margin-bottom: 1rem;
     }
     .viewer-toolbar {
       display: flex; justify-content: space-between; align-items: center;
@@ -30,15 +31,28 @@
     .viewer-label { color: #00d4ff; }
     .viewer-hint { color: #4a6070; }
     model-viewer { width: 100%; height: 540px; background: #0d111a; }
-    .info { margin-top: 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; }
+    .toggle-bar {
+      display: flex; gap: 4px; background: #0d111a; padding: 4px;
+      border: 1px solid #1e2a3a; border-radius: 4px;
+      margin-bottom: 1.5rem;
+    }
+    .toggle-btn {
+      flex: 1; text-align: center; padding: 0.5rem; font-size: 0.75rem;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      background: transparent; border: none; color: #4a6070; cursor: pointer;
+      border-radius: 3px; transition: all 0.2s;
+    }
+    .toggle-btn.active { background: #1e2a3a; color: #00d4ff; }
+    .toggle-btn:hover { color: #c8d8e8; }
+    .info { margin-top: 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1px; }
     .stat { background: #111620; border: 1px solid #1e2a3a; border-radius: 6px; padding: 1rem; }
     .stat-label { font-size: 0.6rem; text-transform: uppercase; color: #4a6070; letter-spacing: 0.12em; margin-bottom: 0.3rem; }
     .stat-value { font-size: 1rem; font-weight: 600; color: #fff; }
-    .links { margin-top: 1.5rem; display: flex; gap: 8px; flex-wrap: wrap; }
+    .links { margin-top: 1rem; display: flex; gap: 6px; flex-wrap: wrap; }
     .links a {
       display: inline-block; padding: 0.5rem 1rem; background: #111620; border: 1px solid #1e2a3a;
-      border-radius: 4px; color: #c8d8e8; font-size: 0.75rem; text-transform: uppercase;
-      letter-spacing: 0.08em; text-decoration: none;
+      border-radius: 4px; color: #c8d8e8; font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.06em; text-decoration: none;
     }
     .links a:hover { border-color: #00d4ff; color: #00d4ff; }
     .footer { margin-top: 1.5rem; font-size: 0.65rem; color: #4a6070; text-align: center; }
@@ -46,7 +60,7 @@
     a:hover { text-decoration: underline; }
     @media (max-width: 640px) {
       .wrap { padding: 1rem; }
-      model-viewer { height: 70vh; }
+      model-viewer { height: 50vh; }
     }
   </style>
 </head>
@@ -55,34 +69,53 @@
   <h1><span>■</span> Colo NAS Case v9</h1>
   <p class="subtitle">7.500" × 7.500" × 2.500" · 18 ga CRS · ZimaBlade 7700 · 2× 3.5" HDD · JetKVM</p>
 
-  <div class="viewer-card">
+  <div class="toggle-bar">
+    <button class="toggle-btn active" id="btn-assembled" onclick="showView('assembled')">Assembled</button>
+    <button class="toggle-btn" id="btn-exploded" onclick="showView('exploded')">Exploded</button>
+  </div>
+
+  <!-- Assembled view -->
+  <div id="view-assembled" class="viewer-card">
     <div class="viewer-toolbar">
-      <span class="viewer-label">⬡ Interactive 3D Model</span>
+      <span class="viewer-label">⬡ Assembled</span>
       <span class="viewer-hint">drag to rotate · pinch to zoom</span>
     </div>
     <model-viewer
+      id="mv-assembled"
       src="colo_nas_v9.glb"
-      alt="Colo NAS Case v9 — complete assembly"
-      auto-rotate
-      auto-rotate-delay="1000"
-      rotation-per-second="20deg"
-      camera-controls
-      shadow-intensity="0.8"
-      shadow-softness="0.5"
-      exposure="1.1"
-      camera-orbit="45deg 55deg auto"
-      min-camera-orbit="auto auto 5%"
-      max-camera-orbit="auto auto 200%"
+      alt="Colo NAS Case v9 — assembled"
+      auto-rotate auto-rotate-delay="1000" rotation-per-second="20deg"
+      camera-controls shadow-intensity="0.8" shadow-softness="0.5"
+      exposure="1.1" camera-orbit="45deg 55deg auto"
+      min-camera-orbit="auto auto 5%" max-camera-orbit="auto auto 200%"
+      interaction-prompt="auto"
+    ></model-viewer>
+  </div>
+
+  <!-- Exploded view (hidden by default) -->
+  <div id="view-exploded" class="viewer-card" style="display:none;">
+    <div class="viewer-toolbar">
+      <span class="viewer-label">⬡ Exploded Assembly</span>
+      <span class="viewer-hint">each part separated for clarity</span>
+    </div>
+    <model-viewer
+      id="mv-exploded"
+      src="colo_nas_v9_exploded.glb"
+      alt="Colo NAS Case v9 — exploded"
+      auto-rotate auto-rotate-delay="1000" rotation-per-second="20deg"
+      camera-controls shadow-intensity="0.8" shadow-softness="0.5"
+      exposure="1.1" camera-orbit="45deg 40deg auto"
+      min-camera-orbit="auto auto 5%" max-camera-orbit="auto auto 200%"
       interaction-prompt="auto"
     ></model-viewer>
   </div>
 
   <div class="info">
-    <div class="stat"><div class="stat-label">Width</div><div class="stat-value">7.500" / 190.5mm</div></div>
-    <div class="stat"><div class="stat-label">Depth</div><div class="stat-value">7.500" / 190.5mm</div></div>
-    <div class="stat"><div class="stat-label">Height</div><div class="stat-value">2.500" / 63.5mm</div></div>
-    <div class="stat"><div class="stat-label">Board</div><div class="stat-value">ZimaBlade 7700</div></div>
-    <div class="stat"><div class="stat-label">Drives</div><div class="stat-value">2× 3.5" HDD</div></div>
+    <div class="stat"><div class="stat-label">Width</div><div class="stat-value">7.500"</div></div>
+    <div class="stat"><div class="stat-label">Depth</div><div class="stat-value">7.500"</div></div>
+    <div class="stat"><div class="stat-label">Height</div><div class="stat-value">2.500"</div></div>
+    <div class="stat"><div class="stat-label">Board</div><div class="stat-value">ZimaBlade</div></div>
+    <div class="stat"><div class="stat-label">Drives</div><div class="stat-value">2× 3.5"</div></div>
     <div class="stat"><div class="stat-label">IPMI</div><div class="stat-value">JetKVM</div></div>
   </div>
 
@@ -91,6 +124,7 @@
     <a href="./colo_nas_v9.stl">📐 STL</a>
     <a href="./colo_nas_v9.glb">🔮 GLB</a>
     <a href="./build_v9.py">🐍 CadQuery</a>
+    <a href="./explode_v9.py">💥 Explode src</a>
     <a href="./piece_1_uchannel.svg">📄 U-channel</a>
     <a href="./piece_2_divider.svg">📄 Divider</a>
     <a href="./piece_3_front.svg">📄 Front</a>
@@ -103,5 +137,31 @@
     <a href="https://github.com/Jgh163/colo-nas-case">GitHub Repo ↗</a>
   </div>
 </div>
+
+<script>
+function showView(name) {
+  const assembled = document.getElementById('view-assembled');
+  const exploded = document.getElementById('view-exploded');
+  const btnA = document.getElementById('btn-assembled');
+  const btnE = document.getElementById('btn-exploded');
+
+  if (name === 'assembled') {
+    assembled.style.display = 'block';
+    exploded.style.display = 'none';
+    btnA.className = 'toggle-btn active';
+    btnE.className = 'toggle-btn';
+    // Re-trigger auto-rotate
+    const mv = document.getElementById('mv-assembled');
+    mv.autoRotate = true;
+  } else {
+    assembled.style.display = 'none';
+    exploded.style.display = 'block';
+    btnA.className = 'toggle-btn';
+    btnE.className = 'toggle-btn active';
+    const mv = document.getElementById('mv-exploded');
+    mv.autoRotate = true;
+  }
+}
+</script>
 </body>
 </html>
