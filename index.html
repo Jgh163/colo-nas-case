@@ -1,101 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colo NAS Case v9</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colo NAS Case v9 — 3D Model</title>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.2.0/dist/model-viewer.min.js"></script>
   <style>
-    * { box-sizing: border-box; margin: 0; }
-    body { background: #1a1a2e; font-family: -apple-system, sans-serif; color: #eee; padding: 0; }
-    h1 { color: #e94560; font-size: 22px; margin-bottom: 4px; }
-    .sub { color: #888; font-size: 13px; margin-bottom: 16px; }
-    .spec-grid { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-    .spec { background: #16213e; border-radius: 6px; padding: 8px 14px; font-size: 13px; }
-    .spec b { color: #e94560; }
-    .card { background: #16213e; border-radius: 10px; padding: 20px; margin-bottom: 16px; }
-    .card h2 { font-size: 16px; margin-bottom: 8px; }
-    a { color: #e94560; text-decoration: none; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; background: #0b0e14; color: #c8d8e8; font-family: system-ui, sans-serif; }
+    body::before {
+      content: ''; position: fixed; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(#1e2a3a 1px, transparent 1px),
+        linear-gradient(90deg, #1e2a3a 1px, transparent 1px);
+      background-size: 40px 40px; opacity: 0.25; pointer-events: none;
+    }
+    .wrap { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 2rem; }
+    h1 { font-size: 1.8rem; font-weight: 600; color: #fff; margin-bottom: 0.3rem; }
+    h1 span { color: #00d4ff; }
+    .subtitle { color: #4a6070; margin-bottom: 1.5rem; font-size: 0.9rem; }
+    .viewer-card {
+      background: #111620; border: 1px solid #1e2a3a; border-radius: 6px; overflow: hidden;
+    }
+    .viewer-toolbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.6rem 1rem; border-bottom: 1px solid #1e2a3a;
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .viewer-label { color: #00d4ff; }
+    .viewer-hint { color: #4a6070; }
+    model-viewer { width: 100%; height: 540px; background: #0d111a; }
+    .info { margin-top: 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; }
+    .stat { background: #111620; border: 1px solid #1e2a3a; border-radius: 6px; padding: 1rem; }
+    .stat-label { font-size: 0.6rem; text-transform: uppercase; color: #4a6070; letter-spacing: 0.12em; margin-bottom: 0.3rem; }
+    .stat-value { font-size: 1rem; font-weight: 600; color: #fff; }
+    .links { margin-top: 1.5rem; display: flex; gap: 8px; flex-wrap: wrap; }
+    .links a {
+      display: inline-block; padding: 0.5rem 1rem; background: #111620; border: 1px solid #1e2a3a;
+      border-radius: 4px; color: #c8d8e8; font-size: 0.75rem; text-transform: uppercase;
+      letter-spacing: 0.08em; text-decoration: none;
+    }
+    .links a:hover { border-color: #00d4ff; color: #00d4ff; }
+    .footer { margin-top: 1.5rem; font-size: 0.65rem; color: #4a6070; text-align: center; }
+    a { color: #00d4ff; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .btn { display: inline-block; background: #0f3460; color: #eee; padding: 10px 20px; 
-           border-radius: 6px; margin: 4px; font-size: 14px; text-align: center; }
-    .btn:hover { background: #e94560; text-decoration: none; }
-    .dl-grid { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
-    #header { padding: 16px 24px; background: #16213e; border-bottom: 2px solid #0f3460; }
-    .content { padding: 16px 24px; }
-    model-viewer { width: 100%; height: 60vh; min-height: 300px; background: #0f3460; border-radius: 8px; }
-    @media (max-width: 640px) { .content { padding: 12px; } model-viewer { height: 50vh; } }
+    @media (max-width: 640px) {
+      .wrap { padding: 1rem; }
+      model-viewer { height: 70vh; }
+    }
   </style>
-  <!-- Load model-viewer from CDN as a regular script (works on mobile browsers) -->
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/index.min.js"></script>
 </head>
 <body>
-  <div id="header">
-    <h1>Colo NAS Case v9</h1>
-    <p class="sub" style="margin:4px 0 0;font-size:13px;color:#888;">
-      7.500" × 7.500" × 2.500" · ZimaBlade 7700 · 2× 3.5" HDD (custom sleds) · JetKVM
-    </p>
+<div class="wrap">
+  <h1><span>■</span> Colo NAS Case v9</h1>
+  <p class="subtitle">7.500" × 7.500" × 2.500" · 18 ga CRS · ZimaBlade 7700 · 2× 3.5" HDD · JetKVM</p>
+
+  <div class="viewer-card">
+    <div class="viewer-toolbar">
+      <span class="viewer-label">⬡ Interactive 3D Model</span>
+      <span class="viewer-hint">drag to rotate · pinch to zoom</span>
+    </div>
+    <model-viewer
+      src="colo_nas_v9.glb"
+      alt="Colo NAS Case v9 — complete assembly"
+      auto-rotate
+      auto-rotate-delay="1000"
+      rotation-per-second="20deg"
+      camera-controls
+      shadow-intensity="0.8"
+      shadow-softness="0.5"
+      exposure="1.1"
+      camera-orbit="45deg 55deg auto"
+      min-camera-orbit="auto auto 5%"
+      max-camera-orbit="auto auto 200%"
+      interaction-prompt="auto"
+    ></model-viewer>
   </div>
 
-  <div class="content">
-    <div class="spec-grid">
-      <div class="spec"><b>Width:</b> 7.500"</div>
-      <div class="spec"><b>Depth:</b> 7.500"</div>
-      <div class="spec"><b>Height:</b> 2.500"</div>
-      <div class="spec">18 ga CRS</div>
-      <div class="spec">Custom sleds ×2</div>
-      <div class="spec">JetKVM IPMI</div>
-      <div class="spec">PCIe slot free</div>
-    </div>
-
-    <!-- 3D Viewer -->
-    <model-viewer src="./colo_nas_v9.glb" ar ar-modes="webxr scene-viewer quick-look"
-      camera-controls auto-rotate rotation-per-second="30deg" shadow-intensity="1"
-      exposure="0.8" camera-orbit="45deg 55deg 300mm">
-      <div slot="progress-bar" style="background:#e94560;"></div>
-    </model-viewer>
-
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;">
-      <a class="btn" href="./colo_nas_v9.step">📦 STEP (edit)</a>
-      <a class="btn" href="./colo_nas_v9.stl">📐 STL (3D)</a>
-      <a class="btn" href="./colo_nas_v9.glb">🔮 GLB (web)</a>
-      <a class="btn" href="./build_v9.py">🐍 CadQuery</a>
-    </div>
-
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;">
-      <a class="btn" href="./piece_1_uchannel.svg">📄 U-channel</a>
-      <a class="btn" href="./piece_2_divider.svg">📄 Divider</a>
-      <a class="btn" href="./piece_3_front.svg">📄 Front</a>
-      <a class="btn" href="./piece_4_rear.svg">📄 Rear</a>
-      <a class="btn" href="./piece_5_top.svg">📄 Top</a>
-      <a class="btn" href="./piece_6_sled.svg">📄 Sled (×2)</a>
-    </div>
-
-    <div class="card">
-      <h2>SendCutSend — 6 pieces</h2>
-      <p style="font-size:13px;color:#aaa;line-height:1.8;">
-        Upload the SVGs above to <a href="https://app.sendcutsend.com">app.sendcutsend.com</a>.<br>
-        <b>Material:</b> 18 ga Mild Steel (0.048")<br>
-        <b>Bends:</b> Piece 1 has 2× 90° bends (walls fold up). Mark red dashed lines.<br>
-        <b>Pieces 2-5:</b> Flat, no bends. Piece 6 (sleds): make 2, 1 bend each side flange.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Assembly order (bottom → top)</h2>
-      <pre style="font-size:12px;color:#aaa;line-height:1.7;overflow-x:auto;">
- 1  U-channel body — fold walls up 90°, screw into tabs
- 2  Divider wall — screw to bottom, separates HDDs (left) from board (right)
- 3  ZimaBlade 7700 — on 5mm standoffs, right bay, I/O at rear
- 4  JetKVM — on 5mm standoffs, right bay in front of ZimaBlade
- 5  HDDs on sleds — slide into left bay guide rails from front
- 6  Front panel — screw to front tabs, 60mm fan in ZimaBlade side
- 7  Rear panel — screw to rear tabs, 60mm fan + bulkheads
- 8  Top panel — screw to wall tabs, ventilated</pre>
-    </div>
-
-    <p style="text-align:center;color:#555;font-size:12px;margin-top:20px;">
-      <a href="https://github.com/Jgh163/colo-nas-case">GitHub Repo</a>
-    </p>
+  <div class="info">
+    <div class="stat"><div class="stat-label">Width</div><div class="stat-value">7.500" / 190.5mm</div></div>
+    <div class="stat"><div class="stat-label">Depth</div><div class="stat-value">7.500" / 190.5mm</div></div>
+    <div class="stat"><div class="stat-label">Height</div><div class="stat-value">2.500" / 63.5mm</div></div>
+    <div class="stat"><div class="stat-label">Board</div><div class="stat-value">ZimaBlade 7700</div></div>
+    <div class="stat"><div class="stat-label">Drives</div><div class="stat-value">2× 3.5" HDD</div></div>
+    <div class="stat"><div class="stat-label">IPMI</div><div class="stat-value">JetKVM</div></div>
   </div>
+
+  <div class="links">
+    <a href="./colo_nas_v9.step">📦 STEP</a>
+    <a href="./colo_nas_v9.stl">📐 STL</a>
+    <a href="./colo_nas_v9.glb">🔮 GLB</a>
+    <a href="./build_v9.py">🐍 CadQuery</a>
+    <a href="./piece_1_uchannel.svg">📄 U-channel</a>
+    <a href="./piece_2_divider.svg">📄 Divider</a>
+    <a href="./piece_3_front.svg">📄 Front</a>
+    <a href="./piece_4_rear.svg">📄 Rear</a>
+    <a href="./piece_5_top.svg">📄 Top</a>
+    <a href="./piece_6_sled.svg">📄 Sled</a>
+  </div>
+
+  <div class="footer">
+    <a href="https://github.com/Jgh163/colo-nas-case">GitHub Repo ↗</a>
+  </div>
+</div>
 </body>
 </html>
